@@ -1,0 +1,8 @@
+Todo list (web interface, python to read excel spreadsheet) 
+
+https://medium.com/@diogo.fg.pinheiro/simple-to-do-list-app-with-node-js-and-mongodb-chapter-1-c645c7a27583
+
+https://www.nylas.com/blog/use-python-requests-module-rest-apis/
+
+https://www.linkedin.com/pulse/testing-rest-apis-using-python-excel-suresh-parimi
+
