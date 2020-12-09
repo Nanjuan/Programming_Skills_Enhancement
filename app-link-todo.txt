@@ -6,3 +6,7 @@ https://www.nylas.com/blog/use-python-requests-module-rest-apis/
 
 https://www.linkedin.com/pulse/testing-rest-apis-using-python-excel-suresh-parimi
 
+Excel -> python -> json ->  Node.js -> html/css -> browser
+
+https://stackabuse.com/reading-and-writing-json-files-with-node-js/
+
