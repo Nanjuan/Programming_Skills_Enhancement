@@ -10,3 +10,23 @@ Excel -> python -> json ->  Node.js -> html/css -> browser
 
 https://stackabuse.com/reading-and-writing-json-files-with-node-js/
 
+ temp = datetime.date(1899, 12, 30)
+    xldate = (db.ws(ws='Sheet1').address(address='C2'))
+    dateCreated = temp+datetime.timedelta(days=xldate)
+    print(dateCreated)
+
+CLass define the object 
+class is a overview like a blueprint of what we going to build can be used multiple times to create something
+
+
+Onject in this case is a row 
+
+naming CLass have a rules on python research 
+google this python using class
+
+
+
+
+
+
+
