@@ -8,7 +8,7 @@ import sys
 from excelRow import excelRow
 
 #Variable Section 
-loc = ("C:\Tools\Programming Skills Enhancement\inputData.xlsx")
+loc = ('inputData.xlsx')
 
 #First open the excel file 
 #Second Read the content of the excel file one line at a time 
