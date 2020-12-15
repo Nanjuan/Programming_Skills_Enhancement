@@ -24,8 +24,15 @@ Onject in this case is a row
 naming CLass have a rules on python research 
 google this python using class
 
+Split date with time 
+https://stackoverflow.com/questions/48101607/removing-time-from-datetime-and-insert-into-db-table-using-python
+convert to date
+https://xlrd.readthedocs.io/en/latest/api.html?highlight=datetime#xlrd.xldate.xldate_from_datetime_tuple
+https://stackoverflow.com/questions/32430679/how-to-read-dates-using-xlrd/32430739
 
-
+for regex on date
+https://stackoverflow.com/questions/4709652/python-regex-to-match-dates
+https://www.tutorialspoint.com/python3/python_reg_expressions.htm
 
 
 

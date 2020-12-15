@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 
 # We need import appropiate library
-import xlrd
+import xlrd #version 1.20.0 
 import sys
-#import datetime
+import datetime
+import re
 
 from excelRow import excelRow
 
@@ -30,10 +31,27 @@ def openExcel():
         excelComment = sheet.cell_value(i,3)
         excelPriority = sheet.cell_value(i,4)
         excelStatus = sheet.cell_value(i,5)
-        #excelCorrectDate = somethignfixday(excelDate)
+        
+        #convert the date to the correct format for xlrd
+        date_mode = datetime.datetime(*xlrd.xldate_as_tuple(excelDate, wb.datemode))
+        start_date_full = date_mode
+        split_start_date_full = str(start_date_full)
 
-        excelObjRow = excelRow(excelNum, excelDate, excelTitle, excelComment, excelPriority, excelStatus)
-        l.append(excelObjRow)        
+        #split the date the date from time with 2 new variable incase we used date in the future
+        split_start_date_full = split_start_date_full.split(" ")
+        excelCorrectDate = split_start_date_full[0]
+        time_split = split_start_date_full[1]
+
+        #validate that the value is just date with re
+        #x=re.search("^([1-9] |1[0-9]| 2[0-9]|3[0-1])(.|-)([1-9] |1[0-2])(.|-|)20[0-9][0-9]$",date)
+        x=re.search("^20[0-9][0-9](.|-)([1-9] |1[0-2])(.|-|)([1-9] |1[0-9]| 2[0-9]|3[0-1])$",excelCorrectDate)
+        print(x)
+
+        #num = re.match([0-9],select_excelNum,flags = 0)
+        #print(num)
+        
+        #excelObjRow = excelRow(int(excelNum), excelCorrectDate, excelTitle, excelComment, excelPriority, excelStatus)
+        #l.append(excelObjRow)        
 
     print(l)
         #print(sheet.cell_value(i, 2))
