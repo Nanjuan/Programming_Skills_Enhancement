@@ -13,6 +13,11 @@ loc = ('inputData.xlsx')
 
 #First open the excel file 
 #Second Read the content of the excel file one line at a time 
+
+# this is the Function to validate the date will go here
+#def validateDate():
+
+
 def openExcel():
 
     wb = xlrd.open_workbook(loc)
@@ -23,6 +28,7 @@ def openExcel():
     #print(sheet.row_values(0))
     
     l = [] #Ths is the list where the values from each row get store
+    
 
     for i in range(rows):
         excelNum = sheet.cell_value(i,0)
@@ -43,15 +49,21 @@ def openExcel():
         time_split = split_start_date_full[1]
 
         #validate that the value is just date with re
-        #x=re.search("^([1-9] |1[0-9]| 2[0-9]|3[0-1])(.|-)([1-9] |1[0-2])(.|-|)20[0-9][0-9]$",date)
-        x=re.search("^20[0-9][0-9](.|-)([1-9] |1[0-2])(.|-|)([1-9] |1[0-9]| 2[0-9]|3[0-1])$",excelCorrectDate)
-        print(x)
-
-        #num = re.match([0-9],select_excelNum,flags = 0)
-        #print(num)
         
-        #excelObjRow = excelRow(int(excelNum), excelCorrectDate, excelTitle, excelComment, excelPriority, excelStatus)
-        #l.append(excelObjRow)        
+        t = []
+        error = "error"
+        if bool(re.match("^20[0-9][0-9](.|-)([1-9] |1[0-2])(.|-|)([1-9] |1[0-9]| 2[0-9]|3[0-1])$",excelCorrectDate)) == True:
+            excelObjRowValidated = excelRow(int(excelNum), excelCorrectDate, excelTitle, excelComment, excelPriority, excelStatus)
+            t.append(excelObjRowValidated)
+        else:
+            excelObjRowValidated = excelRow(int(excelNum), error, excelTitle, excelComment, excelPriority, excelStatus)
+            t.append(excelObjRowValidated)
+
+        #print(t)
+
+
+        excelObjRow = excelRow(int(excelNum), excelCorrectDate, excelTitle, excelComment, excelPriority, excelStatus)
+        l.append(excelObjRow)        
 
     print(l)
         #print(sheet.cell_value(i, 2))
