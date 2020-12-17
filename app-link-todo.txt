@@ -34,6 +34,22 @@ for regex on date
 https://stackoverflow.com/questions/4709652/python-regex-to-match-dates
 https://www.tutorialspoint.com/python3/python_reg_expressions.htm
 
+tuple 
 
+array 
 
+nested if staement validation 
+
+signature is the class value order 
+
+Create the ERD of the database 
+
+create data base squema 
+
+then have a python load to enter data into database 
+
+completion is boolen 
+
+work on duedate convertion and validation 
+work on boolen for completion 
 

@@ -83,10 +83,12 @@ def openExcel():
     for i in range(rows):
         excelNum = sheet.cell_value(i,0)
         excelDate = sheet.cell_value(i,1)
-        excelTitle = sheet.cell_value(i,2)
-        excelComment = sheet.cell_value(i,3)
-        excelPriority = sheet.cell_value(i,4)
-        excelStatus = sheet.cell_value(i,5)
+        excelDueDate = sheet.cell_value(i,2)
+        excelTitle = sheet.cell_value(i,3)
+        excelComment = sheet.cell_value(i,4)
+        excelPriority = sheet.cell_value(i,5)
+        excelCompletion = sheet.cell_value(i,6)
+        excelStatus = sheet.cell_value(i,7)
         
         #date convertion and validation
         excelCorrectDate = dateConvertion(excelDate)
@@ -98,7 +100,7 @@ def openExcel():
         excelSanitizeCharactersTitle = excelSanitizeCharacters[0]
         excelSanitizeCharactersComment = excelSanitizeCharacters[1]
 
-        excelObjRow = excelRow(int(excelNum), excelValidateDateError, excelSanitizeCharactersTitle, excelSanitizeCharactersComment, excelPriority, excelStatus)
+        excelObjRow = excelRow(int(excelNum), excelValidateDateError, excelDueDate, excelSanitizeCharactersTitle, excelSanitizeCharactersComment, excelPriority, excelCompletion, excelStatus)
         l.append(excelObjRow) 
     print(l)
 
