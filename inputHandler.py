@@ -7,7 +7,8 @@ import datetime
 import re
 
 from excelRow import excelRow
-from dateValidation import dateConvertion2, validateTitleComments
+from dateValidation import dateConvertion2, validateTitleComments, validateCompletionBoolean
+from ingestExcelToSQLlite import ingestExcelTo
 
 #Variable Section 
 loc = ('inputData.xlsx')
@@ -41,8 +42,13 @@ def openExcel():
         excelSatizeDueDate = dateConvertion2(excelDueDate)
         excelSatizaDate = dateConvertion2(excelDate)
 
-        excelObjRow = excelRow(int(excelNum), excelSatizaDate, excelSatizeDueDate, excelSanitizeCharactersTitle, excelSanitizeCharactersComment, excelPriority, excelCompletion, excelStatus)
-        l.append(excelObjRow) 
+        excelCompletionTF = validateCompletionBoolean(excelCompletion)
+        # print(excelCompletionTF)
+
+        excelObjRow = excelRow(int(excelNum), excelSatizaDate, excelSatizeDueDate, excelSanitizeCharactersTitle, excelSanitizeCharactersComment, excelPriority, excelCompletionTF, excelStatus)
+        l.append(excelObjRow)
+    
+    ingestExcelTo(l)
     print(l)
 
 def main():

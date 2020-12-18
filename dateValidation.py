@@ -55,3 +55,13 @@ def validateTitleComments(excelTitle, excelComment):
 
     return validateExcelTitle5, validateExcelComments5
 
+#Check for Completion Boolean
+def validateCompletionBoolean(excelCompletion):
+    complete = "complete"
+    notComplete = "not complete"
+
+    if excelCompletion == 1:
+        return complete
+    else:
+        return notComplete
+
