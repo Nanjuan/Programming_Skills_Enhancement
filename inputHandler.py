@@ -7,7 +7,7 @@ import datetime
 import re
 
 from excelRow import excelRow
-from dateValidation import dateConvertion2, validateTitleComments, validateCompletionBoolean
+from dateValidation import dateConvertion2, htmlEncode, validateCompletionBoolean
 from ingestExcelToSQLlite import ingestExcelTo
 
 #Variable Section 
@@ -34,9 +34,8 @@ def openExcel():
         excelStatus = sheet.cell_value(i,7)
         
         #sanitize character for title and comments
-        excelSanitizeCharacters = validateTitleComments(excelTitle, excelComment)
-        excelSanitizeCharactersTitle = excelSanitizeCharacters[0]
-        excelSanitizeCharactersComment = excelSanitizeCharacters[1]
+        excelSanitizeCharactersTitle = htmlEncode(excelTitle)
+        excelSanitizeCharactersComment = htmlEncode(excelComment)
 
         #Date Conversion and Validation 
         excelSatizeDueDate = dateConvertion2(excelDueDate)
@@ -48,7 +47,7 @@ def openExcel():
         excelObjRow = excelRow(int(excelNum), excelSatizaDate, excelSatizeDueDate, excelSanitizeCharactersTitle, excelSanitizeCharactersComment, excelPriority, excelCompletionTF, excelStatus)
         l.append(excelObjRow)
     
-    ingestExcelTo(l)
+    #ingestExcelTo(l)
     print(l)
 
 def main():

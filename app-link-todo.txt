@@ -42,14 +42,18 @@ nested if staement validation
 
 signature is the class value order 
 
-Create the ERD of the database 
+Create the ERD of the database done
 
-create data base squema 
+create data base squema done
 
-then have a python load to enter data into database 
+then have a python load to enter data into database done
 
-completion is boolen 
+completion is boolen done
 
-work on duedate convertion and validation 
-work on boolen for completion 
+work on duedate convertion and validation  done 
+work on boolen for completion done 
+
+Change the PK to auto generate done
+change the data type of the ERD 
+add not null done 
 

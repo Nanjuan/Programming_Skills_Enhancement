@@ -37,23 +37,25 @@ def dateConvertion2(a):
             return error
 
 #Validation of title and comments            
-def validateTitleComments(excelTitle, excelComment):
+def htmlEncode(strToEncode):
     
     lt = "&lt;" #<
     gt = "&gt;" #>
     amp = "&amp;" #&
     quot = "&quot;" #""
     singleQuot = "&#x27;" #'
-    validateExcelTitle = excelTitle
-    validateExcelComments = excelComment
+    # validateExcelTitle = excelTitle
+    # validateExcelComments = excelComment
 
-    #Character to replace for title 
-    validateExcelTitle5 = validateExcelTitle.replace("&", amp).replace(">", gt).replace("<", lt).replace("\"", quot).replace("\'", singleQuot)
+    strEncoded = strToEncode.replace("&", amp).replace(">", gt).replace("<", lt).replace("\"", quot).replace("\'", singleQuot)
 
-    #Charecter to replace for comments
-    validateExcelComments5 = validateExcelComments.replace("&", amp).replace(">", gt).replace("<", lt).replace("\"", quot).replace("\'", singleQuot)
+    # #Character to replace for title 
+    # validateExcelTitle5 = validateExcelTitle.replace("&", amp).replace(">", gt).replace("<", lt).replace("\"", quot).replace("\'", singleQuot)
 
-    return validateExcelTitle5, validateExcelComments5
+    # #Charecter to replace for comments
+    # validateExcelComments5 = validateExcelComments.replace("&", amp).replace(">", gt).replace("<", lt).replace("\"", quot).replace("\'", singleQuot)
+
+    return strEncoded
 
 #Check for Completion Boolean
 def validateCompletionBoolean(excelCompletion):
