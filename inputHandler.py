@@ -19,7 +19,7 @@ def openExcel():
     wb = xlrd.open_workbook(loc)
     sheet = wb.sheet_by_index(0)
     rows = sheet.nrows
-    cols = sheet.ncols
+    #cols = sheet.ncols
     
     l = [] #Ths is the list where the values from each row get store
 
@@ -40,7 +40,6 @@ def openExcel():
         #Date Conversion and Validation 
         excelSatizeDueDate = dateConvertion2(excelDueDate)
         excelSatizaDate = dateConvertion2(excelDate)
-
         excelCompletionTF = validateCompletionBoolean(excelCompletion)
         # print(excelCompletionTF)
 
