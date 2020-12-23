@@ -1,4 +1,14 @@
 const sqlite3 = require('sqlite3').verbose();
+const Task = require('./task.js');
+
+let taskA = new Task(1,2020-11-18,2020-11-18,'start','war','easy','finish','completed');
+let taskB = new Task(5,2020-11-20,2022-11-18,'avengars','time travel','hard','not finish','improgress');
+
+var arr2 = [];
+arr2.push(taskB, taskA);
+
+console.log(arr2);
+// let task = new Task();
 
 // open the database
 let db = new sqlite3.Database('./db/dataStored.db', sqlite3.OPEN_READWRITE, (err) => {
@@ -21,10 +31,12 @@ db.serialize(() => {
     if (err) {
       console.error(err.message);
     }
-    module.exports = {
-      rows: row,
-    };
-    console.log(row)
+    // console.log(row)
+    // return row
+    // module.exports = {
+    //   rows: row,
+    // };
+    // console.log(row)
     // console.log(row.rowNum + "\t" +
     // row.dateTaskEnter + "\t" + 
     // row.dueDate + "\t" + 
