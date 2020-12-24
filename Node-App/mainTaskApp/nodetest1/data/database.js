@@ -1,13 +1,13 @@
 const sqlite3 = require('sqlite3').verbose();
 const Task = require('./task.js');
-// const typesTask = []
+const typesTask = []
 
 // let taskA = new Task( )
 
 // console.log(taskA[0])
-// let taskA = new Task(1,2020-11-18,2020-11-18,'start','war','easy','finish','completed');
-// let taskB = new Task(5,2020-11-20,2022-11-18,'avengars','time travel','hard','not finish','improgress');
-
+let taskA = new Task(1,2020-11-18,2020-11-18,'start','war','easy','finish','completed');
+let taskB = new Task(5,2020-11-20,2022-11-18,'avengars','time travel','hard','not finish','improgress');
+let taskC = new Task();
 // function typeTask(row) {
       
 // }
@@ -38,8 +38,9 @@ db.serialize(() => {
       console.error(err.message);
     }
     // console.log(row.comments)
-
-    let taskList = new Task(row.rowNum,row.dateTaskEnter,row.dueDate,row.title,row.comments,row.priority,row.completion,row.status);
+    // Add a for loop to instantiate the object that is inside the Task()
+    let taskC = new Task();
+    // let taskList = new Task(row.rowNum,row.dateTaskEnter,row.dueDate,row.title,row.comments,row.priority,row.completion,row.status);
     // console.log(taskList)
     // module.exports = taskList
     // console.log(taskList)
@@ -62,6 +63,8 @@ db.serialize(() => {
     // console.log(row.comments)
     // arr2.push(row.rowNum + "\t" +
     // row.dateTaskEnter + "\t" + 
+    taskC.setTaskDate(row.dueDate);
+    console.log(taskC.getTaskDate);
     // row.dueDate + "\t" + 
     // row.title + "\t" + 
     // row.coments + "\t" + 
@@ -70,6 +73,9 @@ db.serialize(() => {
     // row.status
     // );
   });
+  // Just outside of my four loop I will add the object from above into my array 
+  // array is what I used modile.esports = (somethign) to get the data into the index.js file
+  // arr2[0].getTaskDate | iterating throught arrays and populating arrays 
 });
 
 
