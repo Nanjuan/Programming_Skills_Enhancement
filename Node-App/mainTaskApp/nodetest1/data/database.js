@@ -43,7 +43,7 @@ db.serialize(() => {
     // console.log(taskList)
     // module.exports = taskList
     // console.log(taskList)
-    return this.taskList();
+    module.exports.taskList = taskList;
 
 
     // typesTask.push(row)
