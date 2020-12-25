@@ -11,6 +11,15 @@ class Task{
     }
 // install the settter and getter on Visio code to get this working. 
 // google visibility modifier in node js 
+
+getTaskNum() {
+        return this.taskNum;
+    }
+
+    setTaskNum(taskNum) {
+        this.taskNum = taskNum;
+    }
+
     getTaskDate() {
         return this.taskDate;
     }
@@ -19,29 +28,13 @@ class Task{
         this.taskDate = taskDate;
     }
 
-// 	public = getTaskNum() {
-//     return this.taskNum;
-// }
+    getTaskDueDate() {
+        return this.taskDueDate;
+    }
 
-// 	public void setTaskNum(= taskNum) {
-//     this.taskNum = taskNum;
-// }
-
-// public = getTaskDate() {
-//     return this.taskDate;
-// }
-
-// 	public void setTaskDate(= taskDate) {
-//     this.taskDate = taskDate;
-// }
-
-// public = getTaskDueDate() {
-//     return this.taskDueDate;
-// }
-
-// 	public void setTaskDueDate(= taskDueDate) {
-//     this.taskDueDate = taskDueDate;
-// }
+    setTaskDueDate (taskDueDate) {
+        this.taskDueDate = taskDueDate;
+    }
 
 // public = getTaskTitle() {
 //     return this.taskTitle;
