@@ -37,6 +37,8 @@ db.serialize(() => {
     if (err) {
       console.error(err.message);
     }
+    // used this link for this section https://github.com/magneka/SimpleNodeJs/blob/master/wwwroot/Javascript/employeeList.js
+    // her ehwere res.send from Ty goes
     // console.log(row.comments)
     // Add a for loop to instantiate the object that is inside the Task()
     let taskC = new Task();
@@ -63,8 +65,9 @@ db.serialize(() => {
     // console.log(row.comments)
     // arr2.push(row.rowNum + "\t" +
     // row.dateTaskEnter + "\t" + 
-    taskC.setTaskDate(row.dueDate);
-    console.log(taskC.getTaskDate);
+    // Code for set and get it 
+    // taskC.setTaskDate(row.dueDate);
+    // console.log(taskC.getTaskDate);
     // row.dueDate + "\t" + 
     // row.title + "\t" + 
     // row.coments + "\t" + 
