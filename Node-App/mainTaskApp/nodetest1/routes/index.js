@@ -1,7 +1,13 @@
 var express = require('express');
+const { Database } = require('sqlite3');
+var tasks = require('../data/database.js');
+console.log(tasks)
+// var tableString = []
 // const { database } = require('sqlite3');
-const taskList = require('../data/database.js');
-console.log(taskList)
+// const taskList = require('../data/database.js');
+// var tasks = tasks(tableString)
+// import { tasks } from "../data/database.js";
+// console.log(rows)
 
 var router = express.Router();
 var myTitle = 'My first web app 2';

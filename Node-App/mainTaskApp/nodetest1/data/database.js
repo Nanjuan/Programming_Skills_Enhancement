@@ -19,6 +19,40 @@ let db = new sqlite3.Database('../data/db/dataStored.db', sqlite3.OPEN_READWRITE
   console.log('Connected it working database.');
 });
 
+// bellow is the function for tasks
+
+// function tasks(tableString) {
+//   var tableString = "";
+//   var arrayOfTasks = []
+//   db.all(sql, arrayOfTasks, (err, rows) => {
+//     if (err) {
+//       console.error(err.message);
+//     }
+//     // console.log(rows[3].title)
+//     // var tableString = "";
+//     for (var i in rows) {
+//       var task = rows[i];
+//       tableString += "<tr><td>" + task.rowNum
+//                   + "</td><td>" + task.dateTaskEnter
+//                   + "</td><td>" + task.dueDate
+//                   + "</td><td>" + task.title
+//                   + "</td><td>" + task.comments
+//                   + "</td><td>" + task.priority
+//                   + "</td><td>" + task.completion
+//                   + "</td><td>" + task.status
+//                   + "</tr><tr>"              
+//     }
+//     // Here is where tableString actually prints I need it to be on the next one!!
+//     // table.push(tableString)
+//     console.log(tableString)
+//     // module.exports = tableString;
+//     // return tableString;
+
+//   }); 
+// }
+// console.log("here " + tableString)
+
+// below is without the function 
 
 var arrayOfTasks = []
 db.all(sql, arrayOfTasks, (err, rows) => {
@@ -30,6 +64,7 @@ db.all(sql, arrayOfTasks, (err, rows) => {
   // var tableString = "";
   for (var i in rows) {
     var task = rows[i];
+    // var tableString = "";
     tableString += "<tr><td>" + task.rowNum
                 + "</td><td>" + task.dateTaskEnter
                 + "</td><td>" + task.dueDate
@@ -38,17 +73,18 @@ db.all(sql, arrayOfTasks, (err, rows) => {
                 + "</td><td>" + task.priority
                 + "</td><td>" + task.completion
                 + "</td><td>" + task.status
+                + "</tr><tr>"              
   }
   // Here is where tableString actually prints I need it to be on the next one!!
   // table.push(tableString)
-  //  console.log(tableString)
+  // console.log(tableString)
   // module.exports = tableString;
-  return tableString;
+  // return tableString;
+  module.exports.tableString = tableString;
 
 });
-console.log(tableString)
 // module.exports = tableString;
-// console.log(rows)
+// console.log(tableString)
 // Just outside of my four loop I will add the object from above into my array 
 
 
