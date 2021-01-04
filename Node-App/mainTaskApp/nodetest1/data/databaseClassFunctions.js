@@ -1,9 +1,6 @@
-var express = require('express');
-var router = express.Router();
-var myTitle = "nes app";
-
-
-const sqlite3 = require('sqlite3').verbose();
+class Database {
+  allTasks() {
+    const sqlite3 = require('sqlite3').verbose();
     var tableString = "";
     var arrayOfTasks = []
     let sql = `SELECT rowNum as rowNum,
@@ -20,7 +17,7 @@ const sqlite3 = require('sqlite3').verbose();
       if (err) {
         console.error(err.message);
       }
-      console.log('Connected it working database.2');
+      console.log('Connected it working database.');
     });
 
 
@@ -42,21 +39,6 @@ const sqlite3 = require('sqlite3').verbose();
                     + "</td><td>" + task.status
                     + "</tr><tr>"              
       }
-      /* GET home page. */
-      router.get('/', function(req, res, next) {
-      res.send('<html><head></head><body><table>'+tableString+'</table></body></html>');
-      // res.render('index', { 
-      // table: tableString,
-      // title: myTitle
-      // });
-      // message: myMessage,
-      // comment: myComment, 
-  
-  // res.send('<html><body>Hello</body></html>')
-  // res.send('<html><body>'+myMessage+'</body></html>')
-});
-
-
       // this.allTasks = tableString
       // it work here but not one index up
       // console.log(tableString)
@@ -73,18 +55,16 @@ const sqlite3 = require('sqlite3').verbose();
     });
     // return tableString;
 
+  }
+}
+// exports database.tableString;
+thisRows = new Database();
+tableOfAllRows = thisRows.allTasks();
 
+// console.log('final to export ' + tableOfAllRows)
 
-// /* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { 
-//     title: myTitle,
-//     message: myMessage,
-//     comment: myComment, 
-//   });
-//   // res.send('<html><body>Hello</body></html>')
-//   // res.send('<html><body>'+myMessage+'</body></html>')
-// });
-
-
-module.exports = router;
+// console.log('this is printing ' + thisRows.allTasks())
+// console.log(thisRows.allTasks(tableString))
+// module.exports.database = database;
+// module.exports.tableString = tableString;
+// module.exports = allTasks();

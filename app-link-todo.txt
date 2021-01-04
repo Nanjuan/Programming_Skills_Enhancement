@@ -57,3 +57,16 @@ Change the PK to auto generate done
 change the data type of the ERD 
 add not null done 
 
+
+MAKE THE UDPATE IN PHYTHON FIRST THEN MOVE TO NODEJS used the flow chart created
+
+Make the drop down happen for started not started
+
+Make the comments fields editable
+
+Able to add and delete from the rows 
+
+
+
+
+
