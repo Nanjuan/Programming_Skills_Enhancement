@@ -20,7 +20,7 @@ const sqlite3 = require('sqlite3').verbose();
       if (err) {
         console.error(err.message);
       }
-      console.log('Connected it working database.2');
+      console.log('Connected it working database.');
     });
 
 
@@ -44,7 +44,7 @@ const sqlite3 = require('sqlite3').verbose();
       }
       /* GET home page. */
       router.get('/', function(req, res, next) {
-      res.send('<html><head></head><body><table>'+tableString+'</table></body></html>');
+      res.send('<html><head><title>Hello</title></head><body><table>'+tableString+'</table></body></html>');
       // res.render('index', { 
       // table: tableString,
       // title: myTitle
