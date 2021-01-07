@@ -69,7 +69,7 @@ Able to add and delete from the rows
 use node js to use python 
 Create a node js program that get a value from the URL parameter on a ger url/?here to print that value on the screen. = done 
 
-Create a small POC to handle the data commiung in and out before going into database. The objective is that the squeleton is wokring before we get to bigger data. 
+Create a small POC to handle the data commiung in and out before going into database. The objective is that the squeleton is wokring before we get to bigger data. = done 
 
 On Python 
 1) Read all the lines and extract the title to the console 
@@ -77,6 +77,10 @@ On Python
 3) show the content of each field on the task 
 4) let the user select the field they want to edit 
 5) allow the user to edit the file and save it back to the database 
+
+Need to display the table with all the data then have a button that when click redirect the user to the edit page where they able to edit the task then redirect back to the main page with the new record and all records 
+
+
 
 
 
