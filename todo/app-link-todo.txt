@@ -80,6 +80,9 @@ On Python
 
 Need to display the table with all the data then have a button that when click redirect the user to the edit page where they able to edit the task then redirect back to the main page with the new record and all records 
 
+Need to work on the edit page to display a simple hello word to test the redirect back and forwarded. 
+
+
 
 
 
