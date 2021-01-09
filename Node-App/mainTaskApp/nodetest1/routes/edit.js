@@ -22,24 +22,28 @@ let db = new sqlite3.Database('./data/db/dataStored.db', sqlite3.OPEN_READWRITE,
 
 // need to pass the sql plus row into the squery for it to work do aodouble into
 router.get('/', function(req, res, next) {
+  // console.log(req.query.row)
   var row = req.query.row
+  // console.log(sql)
+  var newSQLQuery = sql + row + ';'
+  // console.log(newSQLQuery)
 
-  db.all(sql, arrayOfTasks, row, (err, rows) => {
+
+  db.all(newSQLQuery, arrayOfTasks, row, (err, rows) => {
     if (err) {
       console.error(err.message);
     }
-    console.log(sql + row + ';')
-    // console.log(row)
-    // console.log(rows)
-    // console.log(sql)
+    // console.log('here' + rows[3].title)
+    // console.log(rows[1])
+
   });
   res.render('edit');
     
   });
 
-db.all(sql, arrayOfTasks, (err, rows) => {
-  if (err) {
-    console.error(err.message);
-  }
-  });
+// db.all(sql, arrayOfTasks, (err, rows) => {
+//   if (err) {
+//     console.error(err.message);
+//   }
+//   });
 module.exports = router;
