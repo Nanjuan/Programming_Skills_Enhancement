@@ -5,31 +5,6 @@
 <title>CSS3 Contact Form</title>
 </head>
 <body>
-<div id="contact">
-    <h1>Enter your name</h1>
-    <form action="/edit" method="post">
-        <fieldset>
-            <label for="<%= rows[i].rowNum %>">Row</label>
-            <input type="text" id="<%= rows[i].rowNum %>" name="firstName" placeholder="TaskNumber" />
-        </fieldset>
-    </form>
-</div>
-<p>
-    <table class="tr">
-        <% for(var i = 0; i < rows.length; i++) { %>
-            <tr>
-              <th><%= rows[i].rowNum %></th>
-              <th><%= rows[i].dateTaskEnter %></th>
-              <th><%= rows[i].dueDate %></th>
-              <th><%= rows[i].title %></th>
-              <th><%= rows[i].comments %></th>
-              <th><%= rows[i].priority %></th>
-              <th><%= rows[i].completion %></th>
-              <th><%= rows[i].status %></th>
-              <th><button class= button type="button" action="/edit" value=<%= rows[i].rowNum %>></button></th>
-            </tr>
-        <% } %>  
-      </table>  
-</p>
+    <h1>hello world</h1>
 </body>
 </html>

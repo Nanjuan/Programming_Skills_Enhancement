@@ -44,7 +44,7 @@
           <th><%= rows[i].priority %></th>
           <th><%= rows[i].completion %></th>
           <th><%= rows[i].status %></th>
-          <th><button class="button" onclick="location.href = '/edit';" value=<%= rows[i].rowNum %>>edit</button></th>
+          <th><form action=/edit method="GET"><input type="hidden" name="row" value="<%= rows[i].rowNum %>" ><input type="submit" value="Edit"></form></th>
         </tr>
     <% } %>  
   </table>  

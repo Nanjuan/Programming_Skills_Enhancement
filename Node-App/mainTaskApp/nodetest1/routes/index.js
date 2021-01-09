@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
 const {spawn} = require('child_process');
+
 var arrayOfTasks = []
 var dataToSend = "";
 let sql = `SELECT rowNum as rowNum,
