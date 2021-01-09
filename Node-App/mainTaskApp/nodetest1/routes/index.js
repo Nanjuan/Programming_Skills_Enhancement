@@ -27,6 +27,7 @@ db.all(sql, arrayOfTasks, (err, rows) => {
   if (err) {
     console.error(err.message);
   }
+  // console.log(rows[1].title)
   // console.log(rows[3].title)
 
   /* GET home page. */
@@ -71,12 +72,12 @@ db.all(sql, arrayOfTasks, (err, rows) => {
   // });
 });
 
-db.close((err) => {
-  if (err) {
-    console.error(err.message);
-  }
-  console.log('Close the database connection.');
-});
+// db.close((err) => {
+//   if (err) {
+//     console.error(err.message);
+//   }
+//   console.log('Close the database connection.');
+// });
 
 
 module.exports = router;

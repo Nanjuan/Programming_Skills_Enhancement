@@ -2,9 +2,71 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>CSS3 Contact Form</title>
+<title>Nestor</title>
+<link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
     <h1>hello world</h1>
+    <form action="/edit/updateEdit" method="post">
+        <fieldset>
+            <table class="tr">
+                <tr>
+                    <th id=rowNum ><%= rowNum %></th>
+                </tr>
+                <tr>
+                    <th><%= dateTaskEnter %></th>
+                    <th>
+                        <label for="updateEdit">New Content Here: </label>
+                        <input type="text" name="dateTaskEnter" placeholder="Enter your first name" value="<%= dateTaskEnter %>">
+                    </th>
+                </tr>
+                <tr>
+                    <th><%= dueDate %></th>
+                    <th>
+                        <label for="updateEdit">New Content Here: </label>
+                        <input type="text" name="dueDate" placeholder="Enter your first name" value="<%= dueDate %>">
+                    </th>
+                </tr>
+                <tr>
+                    <th><%= title %></th>
+                    <th>
+                        <label for="updateEdit">New Content Here: </label>
+                        <input type="text" name="title" placeholder="Enter your first name" value="<%= title %>" >
+                    </th>
+                </tr>
+                <tr>
+                    <th><%= comments %></th>
+                    <th>
+                        <label for="updateEdit">New Content Here: </label>
+                        <input type="text" name="comments" placeholder="Enter your first name" value="<%= comments %>">
+                    </th>
+                </tr>
+                <tr>
+                    <th><%= priority %></th>
+                    <th>
+                        <label for="updateEdit">New Content Here: </label>
+                        <input type="text" name="priority" placeholder="Enter your first name" value="<%= priority %>">
+                    </th>
+                </tr>
+                <tr>
+                    <th><%= completion %></th>
+                    <th>
+                        <label for="updateEdit">New Content Here: </label>
+                        <input type="text" name="completion" placeholder="Enter your first name" value="<%= completion %>">
+                    </th>
+                </tr>
+                <tr>
+                    <th><%= status %></th>
+                    <th>
+                        <label for="updateEdit">New Content Here: </label>
+                        <input type="text" name="status" placeholder="Enter your first name" value="<%= status %>">
+                    </th>
+                </tr>
+                <tr>    
+                    <input type="submit" value="Update" />
+                </tr>
+            </table>
+        </fieldset>
+    </form>  
 </body>
 </html>
