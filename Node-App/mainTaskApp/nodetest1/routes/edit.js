@@ -11,7 +11,7 @@ title as title,
 comments as comments,
 priority as priority,
 completion as completion, 
-status as status FROM TaskList WHERE rowNum = `;
+status as status FROM TaskList WHERE rowNum = $rowNum`;
 
 // UPDATE TaskList SET title = 'newUpdateTitle' WHERE rowNum = 2;
 
@@ -28,11 +28,11 @@ router.get('/', function(req, res, next) {
   // console.log(req.query.row)
   var row = req.query.row
   // console.log(sql)
-  var newSQLQuery = sql + row + ';'
+  // var newSQLQuery = sql + row + ';'
   // console.log(newSQLQuery)
 
 
-  db.all(newSQLQuery, arrayOfTasks, row, (err, rows) => {
+  db.all(sql, {$rowNum:row}, (err, rows) => {
     if (err) {
       console.error(err.message);
     }

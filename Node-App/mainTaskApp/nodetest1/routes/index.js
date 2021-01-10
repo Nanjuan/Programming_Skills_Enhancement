@@ -3,7 +3,7 @@ var router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
 const {spawn} = require('child_process');
 
-var arrayOfTasks = []
+// var arrayOfTasks = []
 var dataToSend = "";
 let sql = `SELECT rowNum as rowNum,
 dateTaskEnter as dateTaskEnter,
@@ -41,11 +41,11 @@ FROM TaskList`;
       }
       console.log('Connected it working database.');
     });
-    db.all(sql, arrayOfTasks, (err, rows) => {
+    db.all(sql, (err, rows) => {
       if (err) {
         console.error(err.message);
       }
-      // console.log(sql)
+      // console.log(rows)
       res.render('index', {
         rows:rows,
         dataToSend:dataToSend,
@@ -66,7 +66,7 @@ FROM TaskList`;
       }
       console.log('Connected it working database.');
     });
-    db.all(sql, arrayOfTasks, (err, rows) => {
+    db.all(sql, (err, rows) => {
       if (err) {
         console.error(err.message);
       }
