@@ -8,10 +8,11 @@
 <body>
     <h1>hello world</h1>
     <form action="/edit/updateEdit" method="post">
+        <input type="hidden" name=rowNum value=<%= rowNum %>>
         <fieldset>
             <table class="tr">
                 <tr>
-                    <th id=rowNum ><%= rowNum %></th>
+                    <th><%= rowNum %></th>
                 </tr>
                 <tr>
                     <th><%= dateTaskEnter %></th>
