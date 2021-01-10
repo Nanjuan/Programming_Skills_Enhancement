@@ -6,7 +6,6 @@
 <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-    <h1>hello world</h1>
     <form action="/edit/updateEdit" method="post">
         <input type="hidden" name=rowNum value=<%= rowNum %>>
         <fieldset>
@@ -18,14 +17,14 @@
                     <th><%= dateTaskEnter %></th>
                     <th>
                         <label for="updateEdit">New Content Here: </label>
-                        <input type="text" name="dateTaskEnter" placeholder="Enter your first name" value="<%= dateTaskEnter %>">
+                        <input type="date" name="dateTaskEnter" placeholder="Enter your first name" value="<%= dateTaskEnter %>">
                     </th>
                 </tr>
                 <tr>
                     <th><%= dueDate %></th>
                     <th>
                         <label for="updateEdit">New Content Here: </label>
-                        <input type="text" name="dueDate" placeholder="Enter your first name" value="<%= dueDate %>">
+                        <input type="date" name="dueDate" placeholder="Enter your first name" value="<%= dueDate %>">
                     </th>
                 </tr>
                 <tr>
@@ -54,6 +53,7 @@
                     <th>
                         <label for="updateEdit">New Content Here: </label>
                         <select name="completion">
+                            <option value="" <%= completion == '' ? 'selected' : ''%>> </option>
                             <option value="complete" <%= completion == 'complete' ? 'selected' : ''%>>Complete</option>
                             <option value="notcomplete" <%= completion == 'notcomplete' ? 'selected' : ''%>>Not Complete</option>
                         </select>

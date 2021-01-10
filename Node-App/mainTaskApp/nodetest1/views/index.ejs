@@ -9,10 +9,9 @@
   </head>
   <body>
     <div id="contact">
-      <h1>Enter your name</h1>
       <form action="/update" method="post">
           <fieldset>
-            <legend>Hello World</legend>
+            <legend>Nestor APP</legend>
               <label for="firstName">firstName:</label>
               <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" />
   
@@ -30,19 +29,30 @@
 
   <fieldset>
   <table class="tr">
+    <tr>
+      <th>Row Number</th>
+      <th>Date Task Enter</th>
+      <th>Due Date</th>
+      <th>Title</th>
+      <th>Comments</th>
+      <th>Priority</th>
+      <th>Status</th>
+      <th>Completion</th>
+      <th> </th>
+    </tr>
     <% for(var i = 0; i < rows.length; i++) { %>
         <tr>
-          <th><%= rows[i].rowNum %></th>
-          <th><%= rows[i].dateTaskEnter %></th>
-          <th><%= rows[i].dueDate %></th>
-          <th><%= rows[i].title %></th>
-          <th><%= rows[i].comments %></th>
-          <th><%= rows[i].priority %></th>
-          <th><%= getStatus(rows[i].status) %></th>
-          <th><%= rows[i].completion == 'notcomplete' ? 'Not Complete' : 'Complete' %></th>
-          <th><form action=/edit method="GET"><input type="hidden" name="row" value="<%= rows[i].rowNum %>" ><input type="submit" value="Edit"></form></th>
+          <td><%= rows[i].rowNum %></td>
+          <td><%= rows[i].dateTaskEnter %></td>
+          <td><%= rows[i].dueDate %></td>
+          <td><%= rows[i].title %></td>
+          <td><%= rows[i].comments %></td>
+          <td><%= rows[i].priority %></td>
+          <td><%= getStatus(rows[i].status) %></td>
+          <td><%= getCompletion(rows[i].completion) %></td>
+          <td><form action=/edit method="GET"><input type="hidden" name="row" value="<%= rows[i].rowNum %>" ><input type="submit" value="Edit"></form></td>
         </tr>
-    <% } %>  
+    <% } %> 
   </table> 
 </fieldset> 
 </body>
