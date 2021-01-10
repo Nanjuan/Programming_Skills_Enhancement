@@ -53,14 +53,21 @@
                     <th><%= completion %></th>
                     <th>
                         <label for="updateEdit">New Content Here: </label>
-                        <input type="text" name="completion" placeholder="Enter your first name" value="<%= completion %>">
+                        <select name="completion">
+                            <option value="complete" <%= completion == 'complete' ? 'selected' : ''%>>Complete</option>
+                            <option value="notcomplete" <%= completion == 'notcomplete' ? 'selected' : ''%>>Not Complete</option>
+                        </select>
                     </th>
                 </tr>
                 <tr>
                     <th><%= status %></th>
                     <th>
                         <label for="updateEdit">New Content Here: </label>
-                        <input type="text" name="status" placeholder="Enter your first name" value="<%= status %>">
+                        <select name="status">
+                            <option value="notstarted" <%= status == 'notstarted' ? 'selected' : ''%>>Not Started</option>
+                            <option value="inprogress" <%= status == 'inprogress' ? 'selected' : ''%>>In Progress</option>
+                            <option value="completed" <%= status == 'completed' ? 'selected' : ''%>>Completed</option>
+                        </select>
                     </th>
                 </tr>
                 <tr>    

@@ -1,3 +1,4 @@
+<% include ./functions %> 
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,6 +12,7 @@
       <h1>Enter your name</h1>
       <form action="/update" method="post">
           <fieldset>
+            <legend>Hello World</legend>
               <label for="firstName">firstName:</label>
               <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" />
   
@@ -18,14 +20,15 @@
               <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" />
   
               <input type="submit" value="Send message" />
-  
+              <p>
+                here is the data
+                  <%= dataToSend  %>
+              </p>
           </fieldset>
       </form>
   </div>
-  <p>
-    here is the data
-      <%= dataToSend  %>
-  </p>
+
+  <fieldset>
   <table class="tr">
     <% for(var i = 0; i < rows.length; i++) { %>
         <tr>
@@ -35,11 +38,12 @@
           <th><%= rows[i].title %></th>
           <th><%= rows[i].comments %></th>
           <th><%= rows[i].priority %></th>
-          <th><%= rows[i].completion %></th>
-          <th><%= rows[i].status %></th>
+          <th><%= getStatus(rows[i].status) %></th>
+          <th><%= rows[i].completion == 'notcomplete' ? 'Not Complete' : 'Complete' %></th>
           <th><form action=/edit method="GET"><input type="hidden" name="row" value="<%= rows[i].rowNum %>" ><input type="submit" value="Edit"></form></th>
         </tr>
     <% } %>  
-  </table>  
+  </table> 
+</fieldset> 
 </body>
 </html>

@@ -26,9 +26,6 @@ router.get('/', function(req, res, next) {
   // console.log(req.query.row)
   var row = req.query.row
   // console.log(sql)
-  // var newSQLQuery = sql + row + ';'
-  // console.log(newSQLQuery)
-
 
   db.all(sql, {$rowNum:row}, (err, rows) => {
     if (err) {
@@ -80,7 +77,7 @@ router.get('/', function(req, res, next) {
         $comments: commentsEdit,
         $priority: priorityEdit,
         $completion: completionEdit,
-        $status: completionEdit,
+        $status: statusEdit,
         $rowNum: rowNumBody
       });
       res.redirect('/');

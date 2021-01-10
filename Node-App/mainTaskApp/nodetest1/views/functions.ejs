@@ -1,0 +1,18 @@
+<%
+    getStatus = function(value){
+    switch(value){
+      case "notstarted":
+        return "Not Started"
+        break
+    case "inprogress":
+        return "In Progress"
+        break
+    case "completed":
+        return "Completed"
+        break
+      default:
+        return "error"
+        break
+    }
+  }
+%>
