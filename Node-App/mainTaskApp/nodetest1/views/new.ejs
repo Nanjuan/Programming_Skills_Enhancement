@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Nestor</title>
+<link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <form action="/edit/new" method="post">
+        <fieldset>
+            <table class="tr">
+                <tr>
+                    <th>
+                        <label for="updateEdit">New Content Here: </label>
+                        <input type="number" name="rowNum" placeholder="Enter New Row Num" ">
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="updateEdit">New Content Here: </label>
+                        <input type="date" name="dateTaskEnter" placeholder="Date Task Enter" ">
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="updateEdit">New Content Here: </label>
+                        <input type="date" name="dueDate" placeholder="Due Date" ">
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="updateEdit">New Content Here: </label>
+                        <input type="text" name="title" placeholder="Title"  >
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="updateEdit">New Content Here: </label>
+                        <input type="text" name="comments" placeholder="Comments" >
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="updateEdit">New Content Here: </label>
+                        <input type="text" name="priority" placeholder="Priority" >
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="updateEdit">New Content Here: </label>
+                        <select name="completion">
+                            <option value=""> </option>
+                            <option value="complete">Complete</option>
+                            <option value="notcomplete">Not Complete</option>
+                        </select>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="updateEdit">New Content Here: </label>
+                        <select name="status">
+                            <option value="notstarted">Not Started</option>
+                            <option value="inprogress">In Progress</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </th>
+                </tr>
+                <tr>    
+                    <input type="submit" value="Update" />
+                </tr>
+            </table>
+        </fieldset>
+    </form>  
+</body>
+</html>

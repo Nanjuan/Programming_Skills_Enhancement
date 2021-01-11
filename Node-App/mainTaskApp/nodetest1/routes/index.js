@@ -46,6 +46,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
+
 router.post('/update', function(req, res) {
   let db = new sqlite3.Database('./data/db/dataStored.db', sqlite3.OPEN_READWRITE, (err) => {
     if (err) {
@@ -88,19 +89,7 @@ router.post('/update', function(req, res) {
     console.log('Close the database connection.');
   });
 });
-  // router.get('/edit', function(req, res, next) {
-  //   res.redirect('edit', {
-  //     rows:rows,
-  //   });
-  // });
-// });
 
-// db.close((err) => {
-//   if (err) {
-//     console.error(err.message);
-//   }
-//   console.log('Close the database connection.');
-// });
 
 
 module.exports = router;
