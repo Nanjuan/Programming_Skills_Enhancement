@@ -4,7 +4,7 @@ const sqlite3 = require('sqlite3').verbose();
 const {spawn} = require('child_process');
 
 var dataToSend = "";
-let sql = `SELECT rowNum as rowNum,
+let sql = `SELECT oid as rowNum,
 dateTaskEnter as dateTaskEnter,
 dueDate as dueDate,
 title as title,
@@ -46,6 +46,31 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.post('/delete', function(req, res) {
+  let db = new sqlite3.Database('./data/db/dataStored.db', sqlite3.OPEN_READWRITE, (err) => {
+    if (err) {
+      console.error(err.message);
+    }
+    console.log('Connected it working database.');
+  });
+
+  let deleteRow = req.body.row;
+  // console.log(req.body.row)
+
+  // DELETE FROM TaskList WHERE rowNum = 11;
+  newQuery = `DELETE FROM TaskList WHERE oid = ${deleteRow};`
+ 
+  // console.log(newQuery);
+  db.run(newQuery);
+  db.close((err) => {
+    if (err) {
+      console.error(err.message);
+    }
+    console.log('Close the database connection.');
+  });
+  
+  res.redirect('/')
+});
 
 router.post('/update', function(req, res) {
   let db = new sqlite3.Database('./data/db/dataStored.db', sqlite3.OPEN_READWRITE, (err) => {

@@ -2,14 +2,14 @@ var express = require('express');
 var router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
 
-let sql = `SELECT rowNum as rowNum,
+let sql = `SELECT oid as rowNum,
 dateTaskEnter as dateTaskEnter,
 dueDate as dueDate,
 title as title,
 comments as comments,
 priority as priority,
 completion as completion, 
-status as status FROM TaskList WHERE rowNum = $rowNum`;
+status as status FROM TaskList WHERE oid = $rowNum`;
 
 // UPDATE TaskList SET title = 'newUpdateTitle' WHERE rowNum = 2;
 
@@ -44,9 +44,9 @@ router.get('/', function(req, res, next) {
       // query below is to add new fields 
       // INSERT INTO TaskList (rowNum, dateTaskEnter, dueDate, title, comments, priority, completion, status) VALUES (11, 2021-01-10,2021-02-10, 'New Line','new comments','none','none','not started');
 
-      newQuery = "INSERT INTO TaskList (rowNum, dateTaskEnter, dueDate, title, comments, priority, completion, status) VALUES ($rowNum, $dateTaskEnter,$dueDate,$title,$comments,$priority,$completion,$status);"
+      newQuery = "INSERT INTO TaskList (oid, dateTaskEnter, dueDate, title, comments, priority, completion, status) VALUES ($rowNum, $dateTaskEnter,$dueDate,$title,$comments,$priority,$completion,$status);"
       // updateQuery = "UPDATE TaskList SET dateTaskEnter = $dateTaskEnter, dueDate = $dueDate, title = $title, comments = $comments, priority = $priority,completion = $completion,status = $status WHERE rowNum = $rowNum;" 
-      
+      // console.log(newQuery)
       // console.log(req.body.rowNum)
       db.run(newQuery,{
         $dateTaskEnter:dateTaskEnterEdit,
@@ -79,6 +79,7 @@ router.get('/', function(req, res, next) {
     var priority = rows[0].priority;
     var completion = rows[0].completion;
     var status = rows[0].status;
+    console.log(rowNum)
     // console.log(rowNum, dateTaskEnter)
     // console.log(rows[0].title)
     // if (row == 0){
@@ -117,8 +118,9 @@ router.get('/', function(req, res, next) {
       // query below is to add new fields 
       // INSERT INTO TaskList (rowNum, dateTaskEnter, dueDate, title, comments, priority, completion, status) VALUES (11, 2021-01-10,2021-02-10, 'New Line','new comments','none','none','not started');
 
-      updateQuery = "UPDATE TaskList SET dateTaskEnter = $dateTaskEnter, dueDate = $dueDate, title = $title, comments = $comments, priority = $priority,completion = $completion,status = $status WHERE rowNum = $rowNum;" 
-      
+      updateQuery = "UPDATE TaskList SET dateTaskEnter = $dateTaskEnter, dueDate = $dueDate, title = $title, comments = $comments, priority = $priority,completion = $completion,status = $status WHERE oid = $rowNum;" 
+      // console.log(updateQuery)
+      console.log(rowNumBody)
       // console.log(req.body.rowNum)
       db.run(updateQuery,{
         $dateTaskEnter:dateTaskEnterEdit,
