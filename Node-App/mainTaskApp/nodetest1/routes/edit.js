@@ -66,6 +66,8 @@ router.get('/', function(req, res, next) {
 
       // Need to pass the title which is the name of th efield 
       // UPDATE TaskList SET dateTaskEnter = '2021-10-09', dueDate = '2021-10-10', title = 'newUpdateTitle', comments = 'New query', priority = 'high',completion = 'completed',status = 'working' WHERE rowNum = 2;
+      // query below is to add new fields 
+      // INSERT INTO TaskList (rowNum, dateTaskEnter, dueDate, title, comments, priority, completion, status) VALUES (11, 2021-01-10,2021-02-10, 'New Line','new comments','none','none','not started');
 
       updateQuery = "UPDATE TaskList SET dateTaskEnter = $dateTaskEnter, dueDate = $dueDate, title = $title, comments = $comments, priority = $priority,completion = $completion,status = $status WHERE rowNum = $rowNum;" 
       
