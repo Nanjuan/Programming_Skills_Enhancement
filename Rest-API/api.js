@@ -1,10 +1,21 @@
 // Create express app
 var express = require("express")
+var cors = require('cors')
 var app = express()
 var db = require("./database")
-var md5 = require("md5")
-
 const {spawn} = require('child_process');
+
+// Cors settings
+var allowlist = ['http://localhost:3000']
+var corsOptionsDelegate = function (req, callback) {
+  var corsOptions;
+  if (allowlist.indexOf(req.header('Origin')) !== -1) {
+    corsOptions = { origin: true } // reflect (enable) the requested origin in the CORS response
+  } else {
+    corsOptions = { origin: false } // disable CORS for this request
+  }
+  callback(null, corsOptions) // callback expects two parameters: error and options
+}
 
 // Below how to show the request on terminal
 var logger = require('morgan');
@@ -29,7 +40,7 @@ app.get("/", (req, res, next) => {
 
 // Insert here other API endpoints
 // Get a List of users
-app.get("/api/task", (req, res, next) => {
+app.get("/api/task", cors(corsOptionsDelegate), (req, res, next) => {
     var sql = "SELECT * FROM TaskList"
     var params = []
     db.all(sql, params, (err, rows) => {
@@ -38,7 +49,6 @@ app.get("/api/task", (req, res, next) => {
           return;
         }
         res.json({
-            "message":"success",
             "data":rows
         })
       });

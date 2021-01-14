@@ -1,0 +1,31 @@
+<%
+    getStatus = function(value){
+    switch(value){
+        case "notstarted":
+            return "Not Started"
+            break
+        case "inprogress":
+            return "In Progress"
+            break
+        case "completed":
+            return "Completed"
+            break
+        default:
+            return "error"
+            break
+    }
+  }
+  getCompletion = function(value){
+    switch(value){
+        case "complete":
+            return "Complete"
+            break
+        case "notcomplete":
+            return "Not Complete"
+            break
+        default:
+            return " "
+            break
+    }
+  }
+%>
