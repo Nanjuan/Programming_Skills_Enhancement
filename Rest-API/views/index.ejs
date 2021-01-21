@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <title>Nestor</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    
 
 
   </head>
@@ -11,11 +13,34 @@
       <script>
             $(document).ready(function(){
                 $.getJSON("http://localhost:8001/api/task", function(results){
+                    var table = document.createElement("table");
+                    var trHeader = document.createElement('tr');
+                    $(table).append(trHeader);
+
+                    var thTitle = document.createElement("th");
+                    thTitle.innerHTML = "title";
+                    $(trHeader).append(thTitle);
+
+                    var thComments = document.createElement("th");
+                    thComments.innerHTML = "comments";
+                    $(trHeader).append(thComments);
+
                     $.each(results.data, function(i, task){
-                        var btn = document.createElement("li");   // Create a <button> element
-                            btn.innerHTML = task.title;
-                        $("#myPage").append(btn);
+                        var tr = document.createElement("tr");
+                        $(table).append(tr);
+
+                        var tdTitle = document.createElement("td");
+                        tdTitle.innerHTML = task.title;
+                        $(tdTitle).click(function(){
+                            $(this).addClass('black')
+                        })
+                        $(tr).append(tdTitle);
+
+                        var tdComments = document.createElement("td");
+                        tdComments.innerHTML = task.comments;
+                        $(tr).append(tdComments);
                     });
+                    $("#myPage").append(table);
                 });
             });
       </script>

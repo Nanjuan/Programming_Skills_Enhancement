@@ -1,3 +1,4 @@
+// npm run api
 // Create express app
 var express = require("express")
 var cors = require('cors')
